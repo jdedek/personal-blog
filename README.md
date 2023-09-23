@@ -1,2 +1,3 @@
-# personal-blog
-Personal Blog using Go and HTMX
+# Personal Blog using Go 
+Personal Blog using Go and Pico
+

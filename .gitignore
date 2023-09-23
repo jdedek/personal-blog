@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+/**/.idea/*
+.idea/vcs.xml
+.idea/personal-blog.iml
+.idea/modules.xml
+.idea/personal-blog.iml
