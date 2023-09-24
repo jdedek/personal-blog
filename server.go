@@ -37,6 +37,9 @@ func main() {
 	http.HandleFunc("/tech/", ArticlesHandler)
 	http.HandleFunc("/contact/", ContactHandler)
 
+	// Serve static assets from the "assets" directory
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+
 	err := http.ListenAndServe(":42069", nil)
 	if err != nil {
 		return
