@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta  name="description" content="Personal blog about tech, programming, and leadership."/>
-    <title>{{.PageTitle}}</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/pico.classless.min.css">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
 </head>
 <body>
 <header>
     <hgroup>
-        <h1>Julien Dedek's Blog</h1>
+        <h1>Julien Dedek</h1>
         <h2>Just a pure semantic HTML markup blog (hat'em CSS)</h2>
     </hgroup>
     <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tech">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
     </nav>
 </header>
 <main>
-    {{.Content}}
+    {{template "content" .}}
 </main>
 <footer>
-    <small><a href="mailto:jdedek@posteo.de">Julien Dedek</a> - Built with <a href="https://picocss.com">Pico</a> and <a href="https://go.dev/">Go</a> ♥</small>
+    <small><a href="mailto:jdedek@posteo.de">Julien Dedek</a> - Built with <a href="https://go.dev/">Go</a> and <a href="https://picocss.com">Pico</a> ♥</small>
 </footer>
 </body>
 </html>
