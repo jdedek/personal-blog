@@ -10,7 +10,7 @@ type Page struct {
 }
 
 func renderPage(w http.ResponseWriter, tmplFile string, pageTitle string) {
-	tmpl := template.Must(template.ParseFiles("base.html", tmplFile))
+	tmpl := template.Must(template.ParseFiles("templates/base.html", tmplFile))
 	data := Page{
 		Title: pageTitle,
 	}
@@ -21,15 +21,15 @@ func renderPage(w http.ResponseWriter, tmplFile string, pageTitle string) {
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	renderPage(w, "home.html", "Home")
+	renderPage(w, "templates/home.html", "Home")
 }
 
 func ArticlesHandler(w http.ResponseWriter, r *http.Request) {
-	renderPage(w, "articles.html", "Articles")
+	renderPage(w, "templates/articles.html", "Articles")
 }
 
 func ContactHandler(w http.ResponseWriter, r *http.Request) {
-	renderPage(w, "contact.html", "Contact")
+	renderPage(w, "templates/contact.html", "Contact")
 }
 
 func main() {
