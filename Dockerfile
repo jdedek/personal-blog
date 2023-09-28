@@ -1,11 +1,14 @@
-# Use an official Go runtime as a parent image
-FROM golang:1.21.1-alpine3.14
+FROM golang:1.21
 
-# Set the working directory inside the container
 WORKDIR /app
 
 # Copy the local package files to the container's workspace
 COPY . .
+
+
+# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
 
 # Build the Go application
 RUN go build -o main .
