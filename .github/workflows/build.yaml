@@ -1,0 +1,27 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t my-go-app .
+
+      - name: Run Docker container
+        run: docker run -d -p 42069:42069 my-go-app
+
+      - name: Wait for the application to start
+        run: sleep 5
+
+      - name: Perform tests (optional)
+        run: go test ./...
+
