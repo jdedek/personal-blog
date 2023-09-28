@@ -8,17 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Build code 
-      - uses: actions/setup-go@v4
+        uses: actions/setup-go@v4
         with:
          go-version: '1.21.1'
       
       - name: Start Server
-      - run: go run server.go
+        run: go run server.go
       
       - name: Perform tests (optional)
         run: go test ./...
